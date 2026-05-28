@@ -1746,14 +1746,29 @@ footer iframe{
 
     background:
       linear-gradient(
-        rgba(2, 10, 20, 0.88),
-        rgba(2, 10, 20, 0.92)
+        rgba(2, 10, 20, 0.78),
+        rgba(2, 10, 20, 0.86)
       ),
       url('../Imgs/fondo.png');
-
-    background-size: cover;
-    background-position: center;
+    /* MUESTRA MÁS IMAGEN */
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    /* ECU MÁS VISIBLE */
+    background-position:
+      center top;
+    background-color:
+      #020b14;
+    /* MÁS ESPACIO PARA VER LA ECU */
+    /* padding-top: 320px; */
+    min-height: auto;
+    background-position: center 30px;
   }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+}
 
   .hero-content {
 
@@ -1772,7 +1787,7 @@ footer iframe{
     color:
       rgba(255,255,255,0.82);
   }
-}
+
 
 /* =========================
    MOBILE SPACING
@@ -2254,7 +2269,13 @@ footer iframe{
 }
 
 /* MOBILE */
+@media (min-width: 769px){
 
+  .flip-card:hover .flip-card-inner{
+    transform:rotateY(180deg);
+  }
+
+}
 
 @media(max-width:768px){
 
@@ -2264,6 +2285,20 @@ footer iframe{
     transform:
       translateY(0);
   }
+
+  /* desactiva hover en mobile */
+
+  .flip-card:hover .flip-card-inner{
+    transform:rotateY(180deg);
+  }
+
+  /* flip por click */
+
+  .flip-card.active .flip-card-inner{
+    transform:rotateY(180deg);
+  }
+
+
 }
 
 @media (max-width: 768px){
